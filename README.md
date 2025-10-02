@@ -13,3 +13,24 @@ This is still kind of a exploration project on how to best serve multiple MCP se
 - [ ] MCP client integration
 
 The items above may be updated as the project evolves.
+
+## Testing Methods
+Since the mcp servers are wrapped in FastAPI, the only possible mcp transport is streamable http. There are several mcp clients that can be used to test the endpoints such as :
+- mcp-client-for-ollama [GitHub Repository](https://github.com/jonigl/mcp-client-for-ollama)
+- mcp inspector [GitHub Repository](https://github.com/modelcontextprotocol/inspector) to test the tools endpoints.
+- langgraph agent + lanchain-mcp-adapters [GitHub Repository](https://github.com/langchain-ai/langchain-mcp-adapters).
+
+It is recommended to use multiple clients to test the endpoints and ensure compatibility.
+
+## Installation
+To install the required dependencies, run the following command:
+```
+# create the virtual environment
+uv venv
+
+# install the dependencies
+uv pip install -r requirements.txt
+
+# run the app
+uv uvicorn app.main:app
+```
